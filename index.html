@@ -6,7 +6,7 @@
     <title>Music Player</title>
     <link
       rel="stylesheet"
-      herf="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link
       rel="stylesheet"
@@ -24,30 +24,97 @@
   </head>
   <body>
     <div class="album-cover">
-      <div class="swpiper">
-        <div class="swiper-slide">
-          <img src="images/first.jpg" />
-          <div class="overlay">
-             <a href="https://youtu.be/h1hF28O0vnM?si=OPNTi59WNWMnogsP" target="_blank">
-              <ion-icon name="logo-youtube"></ion-icon>   
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/first.jpg" />
+            <div class="overlay">
+              <a
+                href="https://youtu.be/h1hF28O0vnM?si=OPNTi59WNWMnogsP"
+                target="_blank"
+              >
+                <ion-icon name="logo-youtube"></ion-icon>
               </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/second.jpg" />
+            <div class="overlay">
+              <a
+                href="https://youtu.be/fpc3cdpVc9M?si=m4sblucBTNOiNUPB"
+                target="_blank"
+              >
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/third.jpg" />
+            <div class="overlay">
+              <a
+                href="https://youtu.be/AbkEmIgJMcU?si=JIzXMel27h4TXYMx"
+                target="_blank"
+              >
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/fourth.jpg" />
+            <div class="overlay">
+              <a href="" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/fifth.jpg" />
+            <div class="overlay">
+              <a href="" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/sixth.jpg" />
+            <div class="overlay">
+              <a href="" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="images/seventh.jpg" />
+            <div class="overlay">
+              <a href="" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    </div class="swiper-slide">
-    <img src="images/second.jpg" />
-    <class="overlay">
-      <a href="https://youtu.be/fpc3cdpVc9M?si=m4sblucBTNOiNUPB" target="_blank">
-        <ion-icon name="logo-youtube"></ion-icon>   
-      </a>
-    </div>
-    </div>
-    <div class="swiper-slide">
-    <img src="images/third.jpg" />
-    <div class="overlay">
-      <a href="https://youtu.be/AbkEmIgJMcU?si=JIzXMel27h4TXYMx" target="_blank">
-        <ion-icon name="logo-youtube"></ion-icon>   
-      </a>
-    </div>
-    </div>
 
+    <div class="music-player">
+      <h1>Title</h1>
+      <p>Song Name</p>
+      <audio id="song">
+        <source src="songs/first.mp3" type="audio/mpeg" />
+      </audio>
+      <input type="range" value="0" id="progress" />
+      <div class="controls">
+        <button class="backwards">
+          <i class="fa-solid fa-backward"></i>
+        </button>
+        <button class="play-pause-btn">
+          <i id="controlIcon" class="fa-solid fa-play"></i>
+        </button>
+        <button class="forward">
+          <i class="fa-solid fa-forward"></i>
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
