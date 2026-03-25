@@ -9,38 +9,38 @@ const artistName = document.querySelector(".music-player p");
 
 const songs = [
   {
-    title: "",
-    name: "",
+    title: "Promise",
+    name: "aditya Rikhari ",
     source: "songs/first.mp3",
   },
   {
-    title: "",
-    name: "",
+    title: "TERE HO KE",
+    name: "King & BellaOfficals",
     source: "songs/second.mp3",
   },
   {
-    title: "",
-    name: "",
+    title: "Pal Pal",
+    name: "AFUSIC & Talwiinder",
     source: "songs/third.mp3",
   },
   {
-    title: "",
-    name: "",
+    title: "SHIKAYAT",
+    name: "AKKI",
     source: "songs/fourth.mp3",
   },
   {
-    title: "",
-    name: "",
+    title: "Kabhi Kabhi",
+    name: "Aur",
     source: "songs/fifth.mp3",
   },
   {
-    title: "",
-    name: "",
+    title: "Aankhon Sae Batana",
+    name: "Dikshant",
     source: "songs/sixth.mp3",
   },
   {
-    title: "",
-    name: "",
+    title: "PYAAR?",
+    name: "Naam Sujal",
     source: "songs/seventh.mp3",
   },
 ];
@@ -125,7 +125,7 @@ var swiper = new Swiper(".swiper", {
   },
   navigation: {
     nextEl: ".forward",
-    prevEl: ".backwards",
+    prevEl: ".backward",
   },
 });
 
