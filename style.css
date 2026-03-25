@@ -22,12 +22,14 @@ body {
   background-position: center;
   background-attachment: fixed;
   backdrop-filter: blur(10px);
+  background-size: 3400px;
   animation: slidein 120s forwards infinite alternate;
 }
 @keyframes slidein {
   0%,
   100% {
     background-position: 20% 0%;
+    background-size: 3400px;
   }
   50% {
     background-position: 100% 0%;
