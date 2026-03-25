@@ -1,4 +1,4 @@
-const { source } = require("framer-motion/client");
+const { source, q } = require("framer-motion/client");
 const { title } = require("process");
 
 const progress = document.getElementById("progress");
@@ -59,4 +59,77 @@ song.addEventListener("timeupdate", () => {
   if (!song.paused) {
     progress.value = song.currentTime;
   }
+});
+
+song.addEventListener("loadedmetadata", () => {
+  progress.max = song.duration;
+  progress.value = song.currentTime;
+});
+
+song.addEventListener("ended", () => {
+  currentSongIndex = (swiper.activeIndex + 1) % songs.length;
+  updateSongInfo();
+  swiper.slideTo(currentSongIndex);
+  playSong();
+});
+
+function pauseSong() {
+  song.pause();
+  controlIcon.classList.remove("fa-pause");
+  controlIcon.classList.add("fa-play");
+}
+function playSong() {
+  if (song.paused) {
+    playSong();
+  } else {
+    pauseSong();
+  }
+}
+
+playPauseButton.addEventListener("click", playPause);
+progress.addEventListener("input", () => {
+  song.currentTime = progress.value;
+});
+
+progress.addEventListener("change", () => {
+  playSong();
+});
+
+nextButton.addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
+  updateSongInfo();
+  playPause();
+});
+
+prevButton.addEventListener("click", () => {
+  currentSongIndex = (currentSongIndex - 1 + song.length) % songs.length;
+  updateSongInfo();
+  playPause();
+});
+
+updateSongInfo();
+var swiper = new Swiper(".swiper", {
+  effect: "coverflow",
+  centredSlide: true,
+  initialSlide: 3,
+  slidesPerView: "auto",
+  grabCursor: true,
+  spaceBetween: 40,
+  coverflowEffect: {
+    rotate: 25,
+    stretch: 0,
+    depth: 50,
+    modifier: 1,
+    slideShadow: false,
+  },
+  navigaton: {
+    nextEl: ".forward",
+    prevEl: ".backward",
+  },
+});
+
+swiper.on("slideChange", () => {
+  currentSongIndex = swiper.activeIndex;
+  updateSongInfo();
+  playPause();
 });
