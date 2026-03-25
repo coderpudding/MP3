@@ -1,12 +1,9 @@
-const { source, q } = require("framer-motion/client");
-const { title } = require("process");
-
 const progress = document.getElementById("progress");
 const song = document.getElementById("song");
 const controlIcon = document.getElementById("controlIcon");
 const playPauseButton = document.querySelector(".play-pause-btn");
 const nextButton = document.querySelector(".controls button.forward");
-const prevButton = document.querySelector(".controls button.backwards");
+const prevButton = document.querySelector(".controls button.backward");
 const songName = document.querySelector(".music-player h1");
 const artistName = document.querySelector(".music-player p");
 
@@ -79,13 +76,17 @@ function pauseSong() {
   controlIcon.classList.add("fa-play");
 }
 function playSong() {
+  (song.play(), controlIcon.classList.add("fa-pause"));
+  controlIcon.classList.remove("fa-play");
+}
+
+function playPause() {
   if (song.paused) {
     playSong();
   } else {
     pauseSong();
   }
 }
-
 playPauseButton.addEventListener("click", playPause);
 progress.addEventListener("input", () => {
   song.currentTime = progress.value;
@@ -102,7 +103,7 @@ nextButton.addEventListener("click", () => {
 });
 
 prevButton.addEventListener("click", () => {
-  currentSongIndex = (currentSongIndex - 1 + song.length) % songs.length;
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
   updateSongInfo();
   playPause();
 });
@@ -110,7 +111,7 @@ prevButton.addEventListener("click", () => {
 updateSongInfo();
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
-  centredSlide: true,
+  centeredSlides: true,
   initialSlide: 3,
   slidesPerView: "auto",
   grabCursor: true,
@@ -122,9 +123,9 @@ var swiper = new Swiper(".swiper", {
     modifier: 1,
     slideShadow: false,
   },
-  navigaton: {
+  navigation: {
     nextEl: ".forward",
-    prevEl: ".backward",
+    prevEl: ".backwards",
   },
 });
 
