@@ -2,7 +2,7 @@
 
 A music player web app with a 3D carousel built with HTML, CSS and JavaScript using Swiper.js.
 
-[Preview](preview.png)
+[Preview](images/preview.png)
 
 ## How to Use
 
