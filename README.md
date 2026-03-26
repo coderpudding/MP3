@@ -2,6 +2,16 @@
 
 A music player web app with a 3D carousel built with HTML, CSS and JavaScript using Swiper.js.
 
+![Preview](preview.png)
+
+## How to Use
+
+- Drag or swipe the carousel to browse and change songs
+- Use the **← →** buttons to go to the previous or next song
+- Hit the **play button** to play or pause
+- Drag the **progress bar** to skip to any part of the song
+- Hover over the active album cover and click the **YouTube icon** to watch the video
+
 ## Songs
 
 | # | Song | Artist | YouTube |
